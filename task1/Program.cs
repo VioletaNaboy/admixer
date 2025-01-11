@@ -1,9 +1,7 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
+﻿////to start 'dotnet script Program.cs' 
 
 //приклад вхідних данних
-uint[] input = { 8, 0, 14 };
+uint[] input = { 8, 1, 9 };
 uint targetIndex = 2;
 
 
@@ -46,7 +44,7 @@ int Task1(uint[] array, uint target)
     {
         remainer = (first >= second) ? (first - second) : (second - first);
         smallestNumber = (first >= second) ? second : first;
-
+        //різниця між числами повинна бути кратною 3
         if (remainer % 3 == 0 && (array[target] > 0 || smallestNumber > 0))
         {
             steps = (first >= second) ? (int)first : (int)second;

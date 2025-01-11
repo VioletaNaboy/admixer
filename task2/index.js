@@ -6,7 +6,7 @@ function validSolution(solution) {
         for (let row of solution) {
             if (!Array.isArray(row) || row.length !== 9 || row.includes(0)) return false;
             for (let el of row) {
-                if (el < 1 || el > 9) return false;
+                if (el < 1 || el > 9 || isNaN(el)) return false;
             }
         }
         return true
@@ -21,7 +21,7 @@ function validSolution(solution) {
         return true;
     }
 
-    if (!isRightFormat) return false
+    if (!isRightFormat(solution)) return false
 
     //перевірка рядків і стовбців
     for (let i = 0; i < solution.length; i++) {
